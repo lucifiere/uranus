@@ -18,9 +18,9 @@
 
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <!-- 基本属性 -->
-        <property name="url" value="${jdbc_url}" />
-        <property name="username" value="${jdbc_user}" />
-        <property name="password" value="${jdbc_password}" />
+        <property name="url" value="com.mysql.jdbc.Driver" />
+        <property name="username" value="root" />
+        <property name="password" value="123456" />
         <!-- 配置初始化大小、最小、最大 -->
         <property name="initialSize" value="1" />
         <property name="minIdle" value="1" />
@@ -46,7 +46,7 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean" p:dataSource-ref="dataSource" p:configLocation="classpath:mybatis-config.xml" p:mapperLocations="src/main/resources/mapping/*.xml" />
 
     <!-- spring与mybatis整合配置，扫描所有dao -->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" p:basePackage="com.eduoinfo.finances.bank.web.dao" p:sqlSessionFactoryBeanName="sqlSessionFactory" />
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" p:basePackage="com.microweb.dao" p:sqlSessionFactoryBeanName="sqlSessionFactory" />
 
     <!-- 对dataSource 数据源进行事务管理 -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager" p:dataSource-ref="dataSource" />
@@ -56,7 +56,6 @@
 
     <!-- 配置成Spring自己的Cache配置，也可以替换成更专业的Eh Cache -->
     <cache:annotation-driven cache-manager="cacheManager" />
-    <bean id="ehCacheManagerFactory" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean" p:configLocation="classpath:ehcache.xml" />
     <bean id="cacheManager" class="org.springframework.cache.support.SimpleCacheManager">
         <property name="caches">
             <set>
