@@ -27,7 +27,7 @@ input.button {	margin: 0;	border: 0;	height: 24px;	padding: 0px 12px 0px 12px;}
 a.button:hover, input.button:hover {background: #006699;color:#ffffff;}
 
 /*-------------header */
-header {height: 145px;width:100%; background:url('../images/bg-header.png') repeat-x;margin-bottom:15px;}
+header {height: 145px;width:100%; background:url('../webapp/static/imgs/bg-header.png') repeat-x;margin-bottom:15px;}
 
 header #logo {margin-top:20px;}
 
@@ -41,7 +41,7 @@ header #search-button {position: absolute;top: 0;right: 0;height: 27px;width: 80
 nav {width:960px;height: 37px;margin: 0 auto 15px auto;background:#006699 url(../images/lines2.png);}
 nav ul {list-style: none;margin: 0;padding: 0;}
 nav ul li {position: relative;float: left;padding: 6px 5px 0px 5px}
-nav ul li:hover {background: #006699 url('../images/lines.png');}
+nav ul li:hover {background: #006699 url('../webapp/static/imgs/lines.png');}
 nav ul li a {font-size: 13px; line-height:14px;color: #ffffff;display: block;padding: 6px 10px 6px 10px;margin-bottom: 5px;z-index: 6;position: relative;font-weight:bold;}
 nav ul li:hover a{}
 
@@ -61,14 +61,14 @@ nav ul li:hover a{}
 .main-content .footer .more a{ text-decoration:none;}
 
 .sidebar section{margin-bottom: 20px;}
-.sidebar .heading{color:#ffffff; background:#006699 url('../images/boxtitle.png') no-repeat left center; font-size:22px; font-weight:normal; padding: 10px 10px 10px 50px;}
+.sidebar .heading{color:#ffffff; background:#006699 url('../webapp/static/imgs/boxtitle.png') no-repeat left center; font-size:22px; font-weight:normal; padding: 10px 10px 10px 50px;}
 .sidebar .content{padding:15px;}
 .sidebar .content img{float:left; margin:5px; border:#BDBDBD 5px solid;}
 
 .featured{width:100%; margin-bottom: 20px;}
 
 ul {margin:0; padding:0;list-style-image:none;}
-ul.list li {padding:0px 0 5px 12px; line-height:25px; background:url(../images/marker-1.gif) 0 11px no-repeat;}
+ul.list li {padding:0px 0 5px 12px; line-height:25px; background:url(../webapp/static/imgs/marker-1.gif) 0 11px no-repeat;}
 ul.list li a { font-size:14px; color:#292929; line-height:25px;}
 ul.list li a:hover {color:#006699; text-decoration:none;}
 
@@ -83,4 +83,4 @@ footer ul li a { font-size:14px; color:#ffffff;}
 footer ul li a:hover {color:#006699; text-decoration:none; cursor:pointer;}
 
 /*-------------copyright*/
-#copyright{display:inline-block; width:100%; text-align: center; background:url(../images/bg-footer.png);padding:8px 0px;color:#ffffff;}
+#copyright{display:inline-block; width:100%; text-align: center; background:url(../webapp/static/imgs/bg-footer.png);padding:8px 0px;color:#ffffff;}
