@@ -3,7 +3,7 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     <mapper namespace="com.microweb.dao.Demo">
         <select id="getDemo" parameterType="String" resultType="com.microweb.dao.Demo">
-            SELECT * FROM wd_test WHERE des=#{username}
+            SELECT * FROM wd_test WHERE des=#{des}
         </select>
         <insert id="addDemo" parameterType="com.microweb.dao.Demo" flushCache="true">
           INSERT INTO wd_test des VALUES #{des}
