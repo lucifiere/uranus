@@ -1,7 +1,7 @@
-package com.microweb.controller
+package com.mvc.controller
 
 import com.alibaba.fastjson.JSON
-import com.microweb.service.DemoService
+import com.mvc.service.DemoService
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
@@ -14,12 +14,12 @@ import org.springframework.web.bind.annotation.RequestMethod
  */
 
 @Controller
-class TestController {
+class TestItController {
 
     @Autowired
     DemoService demoService
 
-    private static final Logger log = LoggerFactory.getLogger(TestController.class)
+    private static final Logger log = LoggerFactory.getLogger(TestItController.class)
 
     @RequestMapping(value = '/test', method = RequestMethod.GET)
     public String test(){

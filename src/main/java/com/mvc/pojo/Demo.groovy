@@ -1,8 +1,9 @@
-package com.microweb.pojo
+package com.mvc.pojo
 
 /**
  *  Created by Created by XD.Wang on 2016/10/9.
  */
+
 class Demo {
 
     private Long id

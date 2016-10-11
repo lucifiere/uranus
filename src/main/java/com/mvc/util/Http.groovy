@@ -1,4 +1,4 @@
-package com.microweb.util
+package com.mvc.util
 
 import org.apache.http.HttpEntity
 import org.apache.http.client.ClientProtocolException

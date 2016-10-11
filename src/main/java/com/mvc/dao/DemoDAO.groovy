@@ -1,6 +1,6 @@
-package com.microweb.dao
+package com.mvc.dao
 
-import com.microweb.pojo.Demo
+import com.mvc.pojo.Demo
 
 /**
  *  Created by Created by XD.Wang on 2016/10/9.

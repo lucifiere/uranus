@@ -1,8 +1,8 @@
-package com.microweb.dao.impl
+package com.mvc.dao.impl
 
-import com.microweb.dao.BaseDAO
-import com.microweb.dao.DemoDAO
-import com.microweb.pojo.Demo
+import com.mvc.dao.DaoBase
+import com.mvc.dao.DemoDAO
+import com.mvc.pojo.Demo
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Repository
@@ -12,14 +12,14 @@ import org.springframework.stereotype.Repository
  */
 
 @Repository
-class DemoDAOImpl extends BaseDAO implements DemoDAO{
+class DemoDaoImpl extends DaoBase implements DemoDAO{
 
-    private static Logger log = LoggerFactory.getLogger(DemoDAOImpl.class)
+    private static Logger log = LoggerFactory.getLogger(DemoDaoImpl.class)
 
     @Override
     List getDemos() {
         def session = factory.openSession()
-        List demos = session.selectOne('com.microweb.dao.Demo.getDemos')
+        List demos = session.selectOne('com.mvc.dao.Demo.getDemos')
         session.close()
         demos
     }
@@ -27,7 +27,7 @@ class DemoDAOImpl extends BaseDAO implements DemoDAO{
     @Override
     Demo getDemo(int id) {
         def session = factory.openSession()
-        Demo demo = session.selectOne('com.microweb.dao.Demo.getDemo', id)
+        Demo demo = session.selectOne('com.mvc.dao.Demo.getDemo', id)
         session.close()
         demo
     }
@@ -35,21 +35,21 @@ class DemoDAOImpl extends BaseDAO implements DemoDAO{
     @Override
     void deleteDemo(int id) {
         def session = factory.openSession()
-        session.delete('com.microweb.dao.Demo.deleteUser')
+        session.delete('com.mvc.dao.Demo.deleteUser')
         session.close()
     }
 
     @Override
     void updateDemo(Demo demo) {
         def session = factory.openSession()
-        session.update('com.microweb.dao.Demo.updateDemo', demo)
+        session.update('com.mvc.dao.Demo.updateDemo', demo)
         session.close()
     }
 
     @Override
     void insertDemo(Demo demo) {
         def session = factory.openSession()
-        session.insert('com.microweb.dao.Demo.addDemo', demo)
+        session.insert('com.mvc.dao.Demo.addDemo', demo)
         session.close()
     }
 }

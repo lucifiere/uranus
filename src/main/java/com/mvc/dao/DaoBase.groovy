@@ -1,4 +1,4 @@
-package com.microweb.dao
+package com.mvc.dao
 
 import org.apache.ibatis.io.Resources
 import org.apache.ibatis.session.SqlSessionFactory
@@ -14,10 +14,10 @@ import javax.annotation.PostConstruct
  */
 
 @Repository
-public class BaseDAO {
+public class DaoBase {
 
     protected static SqlSessionFactory factory
-    private static Logger log = LoggerFactory.getLogger(BaseDAO.class)
+    private static Logger log = LoggerFactory.getLogger(DaoBase.class)
 
     @PostConstruct
     public static void init(){

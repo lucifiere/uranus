@@ -1,8 +1,8 @@
-package com.microweb.service.impl
+package com.mvc.service.impl
 
-import com.microweb.dao.DemoDAO
-import com.microweb.pojo.Demo
-import com.microweb.service.DemoService
+import com.mvc.dao.DemoDAO
+import com.mvc.pojo.Demo
+import com.mvc.service.DemoService
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
