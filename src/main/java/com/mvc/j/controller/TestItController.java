@@ -16,7 +16,7 @@ import java.util.HashMap;
  */
 
 @Controller
-public class TestItController {
+class TestItController {
 
     @Autowired
     DemoService demoService;
