@@ -1,11 +1,11 @@
-package com.mvc.j.dao.impl
-
-import com.mvc.g.dao.DaoBase
-import com.mvc.g.dao.DemoDAO
-import com.mvc.g.pojo.Demo
-import org.slf4j.Logger
-import org.slf4j.LoggerFactory
-import org.springframework.stereotype.Repository
+package com.mvc.j.dao.impl;
+;
+import com.mvc.g.dao.DaoBase;
+import com.mvc.g.dao.DemoDAO;
+import com.mvc.g.pojo.Demo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Repository;
 
 /**
  *  Created by Created by XD.Wang on 2016/10/9.
@@ -17,11 +17,11 @@ class DemoDaoImpl extends DaoBase implements DemoDAO{
     private static Logger log = LoggerFactory.getLogger(DemoDaoImpl.class)
 
     @Override
-    List getDemos() {
-        def session = factory.openSession()
-        List demos = session.selectOne('com.mvc.dao.Demo.getDemos')
-        session.close()
-        demos
+    ArrayList getDemos() {
+        def session = factory.openSession();
+        List demos = session.selectOne('com.mvc.dao.Demo.getDemos');
+        session.close();
+        demos;
     }
 
     @Override
