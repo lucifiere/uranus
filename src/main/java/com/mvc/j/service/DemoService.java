@@ -1,12 +1,10 @@
-package com.mvc.j.service
-
-import com.mvc.g.pojo.Demo
+package com.mvc.j.service;
 
 /**
  *  Created by Created by XD.Wang on 2016/10/9.
  */
-interface DemoService {
+public interface DemoService {
 
-    Demo getDemoById(int id)
+    com.mvc.j.pojo.Demo getDemoById(int id);
 
 }

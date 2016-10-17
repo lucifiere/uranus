@@ -7,6 +7,6 @@ import com.mvc.g.pojo.Demo
  */
 interface DemoService {
 
-    Demo getDemoById(int id)
+    Demo getDemoById(int id);
 
 }
