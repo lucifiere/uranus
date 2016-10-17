@@ -5,7 +5,7 @@
 <configuration>
 
     <typeAliases>
-        <typeAlias type="com.mvc.pojo.Demo" alias="demo"/>
+        <typeAlias type="com.com.mvc.g.com.mvc.j.pojo.Demo" alias="demo"/>
     </typeAliases>
     <!-- 对事务的管理和连接池的配置 -->
     <environments default="dev">

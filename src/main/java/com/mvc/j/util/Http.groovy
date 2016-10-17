@@ -1,4 +1,4 @@
-package com.mvc.util
+package com.mvc.j.util
 
 import org.apache.http.HttpEntity
 import org.apache.http.client.ClientProtocolException

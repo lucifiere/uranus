@@ -5,7 +5,7 @@
         <select id="getDemo" parameterType="String" resultType="com.mvc.dao.Demo">
             SELECT * FROM wd_test WHERE des=#{des}
         </select>
-        <select id="getDemos" resultType="java.util.ArrayList">
+        <select id="getDemos" resultType="java.com.mvc.j.util.ArrayList">
             SELECT * FROM wd_test
         </select>
         <insert id="addDemo" parameterType="com.mvc.dao.Demo" flushCache="true">

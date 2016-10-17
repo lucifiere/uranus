@@ -1,6 +1,6 @@
-package com.mvc.service
+package com.mvc.g.service
 
-import com.mvc.pojo.Demo
+import com.mvc.g.pojo.Demo
 
 /**
  *  Created by Created by XD.Wang on 2016/10/9.

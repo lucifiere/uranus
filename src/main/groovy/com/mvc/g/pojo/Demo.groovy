@@ -1,4 +1,4 @@
-package com.mvc.pojo
+package com.mvc.g.pojo
 
 /**
  *  Created by Created by XD.Wang on 2016/10/9.

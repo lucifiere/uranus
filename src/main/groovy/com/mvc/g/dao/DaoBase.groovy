@@ -1,4 +1,4 @@
-package com.mvc.dao
+package com.mvc.g.dao
 
 import org.apache.ibatis.io.Resources
 import org.apache.ibatis.session.SqlSessionFactory

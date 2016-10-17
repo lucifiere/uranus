@@ -1,8 +1,8 @@
-package com.mvc.dao.impl
+package com.mvc.j.dao.impl
 
-import com.mvc.dao.DaoBase
-import com.mvc.dao.DemoDAO
-import com.mvc.pojo.Demo
+import com.mvc.g.dao.DaoBase
+import com.mvc.g.dao.DemoDAO
+import com.mvc.g.pojo.Demo
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Repository

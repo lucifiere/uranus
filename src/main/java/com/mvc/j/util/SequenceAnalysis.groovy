@@ -1,4 +1,4 @@
-package com.mvc.util
+package com.mvc.j.util
 
 /**
  *  Created by Created by XD.Wang on 2016/9/5.

@@ -1,8 +1,8 @@
-package com.mvc.service.impl
+package com.mvc.g.service.impl
 
-import com.mvc.dao.DemoDAO
-import com.mvc.pojo.Demo
-import com.mvc.service.DemoService
+import com.mvc.g.dao.DemoDAO
+import com.mvc.g.service.DemoService
+import com.mvc.g.pojo.Demo
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired

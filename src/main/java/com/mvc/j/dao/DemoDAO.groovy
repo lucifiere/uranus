@@ -1,6 +1,6 @@
-package com.mvc.dao
+package com.mvc.j.dao
 
-import com.mvc.pojo.Demo
+import com.mvc.g.pojo.Demo
 
 /**
  *  Created by Created by XD.Wang on 2016/10/9.
