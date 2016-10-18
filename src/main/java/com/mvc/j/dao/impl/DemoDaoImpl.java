@@ -1,5 +1,5 @@
 package com.mvc.j.dao.impl;
-;
+
 import com.mvc.j.dao.DaoBase;
 import com.mvc.j.dao.DemoDAO;
 import com.mvc.j.pojo.Demo;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
  *  Created by Created by XD.Wang on 2016/10/9.
  */
 
-@Repository
+@Repository("javaDemoDaoImpl")
 public class DemoDaoImpl extends DaoBase implements DemoDAO{
 
     private static Logger log = LoggerFactory.getLogger(DemoDaoImpl.class);
@@ -22,7 +22,7 @@ public class DemoDaoImpl extends DaoBase implements DemoDAO{
     @Override
     public ArrayList getDemos() {
         SqlSession session = factory.openSession();
-        ArrayList demos = session.selectOne("com.mvc.dao.Demo.getDemos");
+        ArrayList demos = session.selectOne("com.mvc.dao.Demo.getDemoList");
         session.close();
         return demos;
     }

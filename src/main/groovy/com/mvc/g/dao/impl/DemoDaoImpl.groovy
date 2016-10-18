@@ -18,18 +18,20 @@ class DemoDaoImpl extends DaoBase implements DemoDAO{
 
     @Override
     List getDemos() {
-        def session = factory.openSession()
-        List demos = session.selectOne('com.mvc.dao.Demo.getDemos')
-        session.close()
-        demos
+//        def session = factory.openSession()
+//        List demos = session.selectOne('com.mvc.dao.Demo.getDemos')
+//        session.close()
+//        demos
+        []
     }
 
     @Override
     Demo getDemo(int id) {
-        def session = factory.openSession()
-        Demo demo = session.selectOne('com.mvc.dao.Demo.getDemo', id)
-        session.close()
-        demo
+//        def session = factory.openSession()
+//        Demo demo = session.selectOne('com.mvc.dao.Demo.getDemo', id)
+//        session.close()
+//        demo
+        null
     }
 
     @Override

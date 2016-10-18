@@ -14,7 +14,7 @@ import java.io.Reader;
  *  Created by Created by XD.Wang on 2016/10/9.
  */
 
-@Repository
+@Repository("javaDaoBaseImpl")
 public class DaoBase {
 
     protected static SqlSessionFactory factory;
@@ -22,11 +22,13 @@ public class DaoBase {
 
     @PostConstruct
     public static void init(){
-        try {
-            Reader reader = Resources.getResourceAsReader("mybatis-config.xml");
-            factory = new SqlSessionFactoryBuilder().build(reader);
-        } catch (IOException e) {
-            log.error("初始化MyBatis失败", e);
+        if(factory == null){
+            try {
+                Reader reader = Resources.getResourceAsReader("mybatis-config.xml");
+                factory = new SqlSessionFactoryBuilder().build(reader);
+            }catch (IOException e) {
+                log.error("初始化MyBatis失败", e);
+            }
         }
     }
 

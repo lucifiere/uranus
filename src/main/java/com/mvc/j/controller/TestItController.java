@@ -9,16 +9,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.annotation.Resource;
 import java.util.HashMap;
 
 /**
  *  Created by Created by XD.Wang on 2016/10/9.
  */
 
-@Controller
+@Controller("javaTestItController")
 class TestItController {
 
-    @Autowired
+    @Resource(name = "javaDemoServiceImpl")
     DemoService demoService;
 
     private static final Logger log = LoggerFactory.getLogger(TestItController.class);
