@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -25,11 +26,13 @@ class TestItController {
     private static final Logger log = LoggerFactory.getLogger(TestItController.class);
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)
-    public String test(){
+    public ModelAndView test(){
+        ModelAndView mv = new ModelAndView("test");
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("data1", "data1");
         map.put("data2", "data2");
-        return JSON.toJSONString(map);
+        mv.addObject(map);
+        return mv;
     }
 
 }
