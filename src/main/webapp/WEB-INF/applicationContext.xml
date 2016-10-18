@@ -47,10 +47,11 @@
         <property name="filters" value="stat" />
     </bean>
 
-    <!-- 视图解析器 -->
+    <!-- JSP视图解析器 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/jsp/" />
         <property name="suffix" value=".jsp" />
+        <property name="order" value="2" />
     </bean>
 
     <!-- mybatis文件配置，扫描所有mapper文件 -->
@@ -73,5 +74,37 @@
                 <bean name="myCache" class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean"/>
             </set>
         </property>
+    </bean>
+
+    <!-- FreeMarker视图解析器 -->
+    <!-- 配置Freemarker属性文件所在位置 -->
+    <bean id="freemarkerConfiguration"        class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="location" value="classpath:config/freemarker.properties" />
+    </bean>
+    <!-- 配置freeMarker模板加载地址 -->
+    <bean id="freemarkerConfig"        class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+        <!-- 视图解析器在/WEB-INF/ftl/下扫描视图文件 -->
+        <property name="templateLoaderPath" value="/WEB-INF/ftl/" />
+        <property name="freemarkerVariables">
+            <map>
+                <entry key="xml_escape" value-ref="fmXmlEscape" />
+            </map>
+        </property>
+    </bean>
+    <bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape" />
+
+    <bean id="freeMarkerViewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView" />
+        <property name="viewNames">
+            <array>
+                <value>*.ftl</value>
+            </array>
+        </property>
+        <property name="contentType" value="text/html; charset=UTF-8" />
+        <property name="exposeRequestAttributes" value="true" />
+        <property name="exposeSessionAttributes" value="true" />
+        <property name="exposeSpringMacroHelpers" value="true" />
+        <property name="requestContextAttribute" value="request" />
+        <property name="order" value="1" />
     </bean>
 </beans>

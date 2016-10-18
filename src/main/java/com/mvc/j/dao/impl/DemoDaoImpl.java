@@ -19,7 +19,7 @@ public class DemoDaoImpl extends DaoBase implements DemoDAO{
 
     private static Logger log = LoggerFactory.getLogger(DemoDaoImpl.class);
 
-    @Override
+
     public ArrayList getDemos() {
         SqlSession session = factory.openSession();
         ArrayList demos = session.selectOne("com.mvc.dao.Demo.getDemoList");
@@ -27,7 +27,7 @@ public class DemoDaoImpl extends DaoBase implements DemoDAO{
         return demos;
     }
 
-    @Override
+
     public Demo getDemo(int id) {
         SqlSession session = factory.openSession();
         Demo demo = session.selectOne("com.mvc.dao.Demo.getDemo", id);
@@ -35,21 +35,21 @@ public class DemoDaoImpl extends DaoBase implements DemoDAO{
         return demo;
     }
 
-    @Override
+
     public void deleteDemo(int id) {
         SqlSession session = factory.openSession();
         session.delete("com.mvc.dao.Demo.deleteUser");
         session.close();
     }
 
-    @Override
+
     public void updateDemo(Demo demo) {
         SqlSession session = factory.openSession();
         session.update("com.mvc.dao.Demo.updateDemo", demo);
         session.close();
     }
 
-    @Override
+
     public void insertDemo(Demo demo) {
         SqlSession session = factory.openSession();
         session.insert("com.mvc.dao.Demo.addDemo", demo);
