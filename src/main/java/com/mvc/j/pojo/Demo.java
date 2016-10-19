@@ -10,19 +10,19 @@ public class Demo {
 
     private String des;
 
-    Long getId() {
+    public Long getId() {
         return id;
     }
 
-    void setId(Long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    String getDes() {
+    public String getDes() {
         return des;
     }
 
-    void setDes(String des) {
+    public void setDes(String des) {
         this.des = des;
     }
 }

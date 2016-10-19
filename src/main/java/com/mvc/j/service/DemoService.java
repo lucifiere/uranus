@@ -8,5 +8,6 @@ import com.mvc.j.pojo.Demo;
 public interface DemoService {
 
     Demo getDemoById(int id);
+    void insertDemo(Demo demo);
 
 }
