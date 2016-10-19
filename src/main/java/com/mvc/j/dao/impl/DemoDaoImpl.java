@@ -19,14 +19,12 @@ public class DemoDaoImpl extends DaoBase implements DemoDAO{
 
     private static Logger log = LoggerFactory.getLogger(DemoDaoImpl.class);
 
-
     public ArrayList getDemos() {
         SqlSession session = factory.openSession();
         ArrayList demos = session.selectOne("com.mvc.dao.Demo.getDemoList");
         session.close();
         return demos;
     }
-
 
     public Demo getDemo(int id) {
         SqlSession session = factory.openSession();
@@ -35,20 +33,17 @@ public class DemoDaoImpl extends DaoBase implements DemoDAO{
         return demo;
     }
 
-
     public void deleteDemo(int id) {
         SqlSession session = factory.openSession();
         session.delete("com.mvc.dao.Demo.deleteUser");
         session.close();
     }
 
-
     public void updateDemo(Demo demo) {
         SqlSession session = factory.openSession();
         session.update("com.mvc.dao.Demo.updateDemo", demo);
         session.close();
     }
-
 
     public void insertDemo(Demo demo) {
         SqlSession session = factory.openSession();
