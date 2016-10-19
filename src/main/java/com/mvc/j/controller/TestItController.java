@@ -25,7 +25,7 @@ class TestItController {
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public ModelAndView test(){
-        ModelAndView mv = new ModelAndView("test");
+        ModelAndView mv = new ModelAndView("test.jsp");
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("data1", "data1");
         map.put("data2", "data2");
