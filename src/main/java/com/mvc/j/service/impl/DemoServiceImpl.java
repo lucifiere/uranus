@@ -23,7 +23,11 @@ public class DemoServiceImpl implements DemoService {
     private static final Logger log = LoggerFactory.getLogger(DemoServiceImpl.class);
 
     public Demo getDemoById(int id) {
-        log.info("test it");
         return demoDAO.getDemo(id);
+    }
+
+    @Override
+    public void insertDemo(Demo demo) {
+        demoDAO.insertDemo(demo);
     }
 }

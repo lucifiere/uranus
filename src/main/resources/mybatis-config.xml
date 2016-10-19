@@ -21,7 +21,9 @@
     </environments>
     <!-- mapping 文件路径配置 -->
     <mappers>
-        <!--<mapper resource="/mapping/base.xml" />-->
+        <!-- 测试 -->
+        <mapper resource="/mapping/base.xml" />
+        <mapper class="com.mvc.j.dao.mapper.MyBatisDemoMapper"/>
     </mappers>
 
 </configuration>
