@@ -6,7 +6,7 @@ import java.util.ArrayList;
 /**
  *  Created by Created by XD.Wang on 2016/10/9.
  */
-public interface DemoDAO {
+public interface DemoDao {
 
     ArrayList getDemos();
     Demo getDemo(int id);

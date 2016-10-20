@@ -23,7 +23,7 @@ class TestItController {
 
     private static final Logger log = LoggerFactory.getLogger(TestItController.class);
 
-    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    @RequestMapping(value = "/get", method = RequestMethod.GET)
     public ModelAndView test(int id){
         ModelAndView mv = new ModelAndView("test.jsp");
         Demo demo = demoService.getDemoById(id);

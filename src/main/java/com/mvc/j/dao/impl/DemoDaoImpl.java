@@ -1,7 +1,7 @@
 package com.mvc.j.dao.impl;
 
 import com.mvc.j.dao.DaoBase;
-import com.mvc.j.dao.DemoDAO;
+import com.mvc.j.dao.DemoDao;
 import com.mvc.j.pojo.Demo;
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
  */
 
 @Repository("javaDemoDaoImpl")
-public class DemoDaoImpl extends DaoBase implements DemoDAO{
+public class DemoDaoImpl extends DaoBase implements DemoDao {
 
     private static Logger log = LoggerFactory.getLogger(DemoDaoImpl.class);
 

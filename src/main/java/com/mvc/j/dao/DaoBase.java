@@ -15,7 +15,7 @@ import java.io.Reader;
  */
 
 @Repository("javaDaoBaseImpl")
-public class DaoBase {
+public abstract class DaoBase {
 
     protected static SqlSessionFactory factory;
     private static Logger log = LoggerFactory.getLogger(DaoBase.class);

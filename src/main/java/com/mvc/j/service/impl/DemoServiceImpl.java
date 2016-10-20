@@ -1,6 +1,6 @@
 package com.mvc.j.service.impl;
 
-import com.mvc.j.dao.DemoDAO;
+import com.mvc.j.dao.DemoDao;
 import com.mvc.j.pojo.Demo;
 import com.mvc.j.service.DemoService;
 import org.slf4j.Logger;
@@ -18,7 +18,7 @@ import javax.annotation.Resource;
 public class DemoServiceImpl implements DemoService {
 
     @Resource(name = "javaDemoDaoImpl")
-    DemoDAO demoDAO;
+    DemoDao demoDAO;
 
     private static final Logger log = LoggerFactory.getLogger(DemoServiceImpl.class);
 
