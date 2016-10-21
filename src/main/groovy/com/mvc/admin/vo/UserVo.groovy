@@ -1,22 +1,15 @@
-package com.mvc.admin.pojo
+package com.mvc.admin.vo
+
+import com.mvc.admin.pojo.User
 
 /**
- *  Created by Created by XD.Wang on 2016/10/20.
+ *  Created by Created by XD.Wang on 2016/10/21.
  */
-class UserInfo {
+class UserVo extends User{
 
-    private int id
     private String userName
     private String sex
     private String portraitUrl
-
-    int getId() {
-        return id
-    }
-
-    void setId(int id) {
-        this.id = id
-    }
 
     String getUserName() {
         return userName

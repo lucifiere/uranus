@@ -19,7 +19,7 @@ import javax.annotation.Resource
  */
 
 @Controller
-class UserController {
+class LoginController {
 
     @Resource(name = 'userService')
     UserService userService
@@ -33,8 +33,11 @@ class UserController {
     @ResponseBody
     public String check(LoginInfo info){
         User user =  userService.getUserByAccount(info.getAccount())
-        JSON.toJSONString([code : user ? HttpCode.SUCCESS.getCode() : HttpCode.AUTHORIZATION_FAILED.getCode(),
-                            url: "/get?id=2"])
+        String url = "/admin/index"
+        int code =  user.getCipher() == info.getCipher() ? HttpCode.SUCCESS.getCode() : HttpCode.AUTHORIZATION_FAILED.getCode()
+        Map r = [code: code,
+                 url: url, token: user.getToken()]
+        JSON.toJSONString(r)
     }
 
 }

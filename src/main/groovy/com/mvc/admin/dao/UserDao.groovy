@@ -2,6 +2,7 @@ package com.mvc.admin.dao
 
 import com.mvc.admin.dao.mapper.UserMapper
 import com.mvc.admin.pojo.User
+import com.mvc.admin.vo.UserVo
 import org.apache.ibatis.session.SqlSession
 import org.springframework.stereotype.Repository
 
@@ -12,17 +13,14 @@ import org.springframework.stereotype.Repository
 @Repository
 class UserDao extends DaoBase{
 
-
-
-    public User getUserById(int id){
+    public UserVo getUserById(int id){
         SqlSession session = factory.openSession()
         try {
             UserMapper userDAO = session.getMapper(UserMapper.class)
-            User user = userDAO.getUserById(id)
+            UserVo user = userDAO.getUserById(id)
             return user
         } finally {
-            session.close();
-            null
+            session.close()
         }
     }
 
@@ -33,9 +31,32 @@ class UserDao extends DaoBase{
             User user = userDAO.getUserByAccount(account)
             return user
         } finally {
-            session.close();
-            null
+            session.close()
         }
     }
+
+    public UserVo getUserByToken(String account){
+        SqlSession session = factory.openSession()
+        try {
+            UserMapper userDAO = session.getMapper(UserMapper.class)
+            UserVo user = userDAO.getUserByToken(account)
+            return user
+        } finally {
+            session.close()
+        }
+    }
+
+    public List<UserVo> getUser4Admin(){
+        SqlSession session = factory.openSession()
+        try {
+            UserMapper userDAO = session.getMapper(UserMapper.class)
+            List<UserVo> userList = userDAO.getUser4Admin()
+            return userList
+        } finally {
+            session.close()
+        }
+    }
+
+
 
 }

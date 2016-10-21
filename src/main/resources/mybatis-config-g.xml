@@ -6,7 +6,9 @@
 
     <typeAliases>
         <typeAlias type="com.mvc.admin.pojo.User" alias="user"/>
+        <typeAlias type="com.mvc.admin.vo.UserVo" alias="userVo"/>
     </typeAliases>
+
     <!-- 对事务的管理和连接池的配置 -->
     <environments default="dev">
         <environment id="dev">
@@ -24,6 +26,9 @@
         <!-- 用户信息 -->
         <mapper class="com.mvc.admin.dao.mapper.UserMapper"/>
         <mapper class="com.mvc.admin.dao.mapper.UserInfoMapper"/>
+        <mapper class="com.mvc.admin.dao.mapper.StaticsMapper"/>
+        <mapper class="com.mvc.admin.dao.mapper.OperateLogMapper"/>
+        <mapper class="com.mvc.admin.dao.mapper.WordMapper"/>
     </mappers>
 
 </configuration>

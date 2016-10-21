@@ -8,6 +8,7 @@ class User {
     private int id
     private String account
     private String cipher
+    private String token
     private int info
 
     int getId() {
@@ -40,5 +41,13 @@ class User {
 
     void setInfo(int info) {
         this.info = info
+    }
+
+    String getToken() {
+        return token
+    }
+
+    void setToken(String token) {
+        this.token = token
     }
 }

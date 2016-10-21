@@ -11,19 +11,19 @@ import org.apache.ibatis.annotations.Update
  */
 interface UserInfoMapper {
 
-    @Insert("insert into admin_user_info (user_name, sex, portrait_url) values(#{userName}, #{sex}, #{portraitUrl})")
+    @Insert('insert into admin_user_info (user_name, sex, portrait_url) values(#{userName}, #{sex}, #{portraitUrl})')
     public int add(UserInfo user)
 
-    @Delete("delete from admin_user_info where id = #{id}")
+    @Delete('delete from admin_user_info where id = #{id}')
     public int deleteById(int id)
 
-    @Update("update admin_user_info set user_name = #{userName}, sex = #{sex}, portrait_url = #{portraitUrl} where id = #{id}")
+    @Update('update admin_user_info set user_name = #{userName}, sex = #{sex}, portrait_url = #{portraitUrl} where id = #{id}')
     public int update(UserInfo user)
 
-    @Select("select * from admin_user_info where id = #{id}")
+    @Select('select user_name, sex, portrait_url as portraitUrl,id from admin_user_info where id = #{id}')
     public UserInfo getUserInfoById(int id)
 
-    @Select("select * from admin_user_info")
-    public List getAllUserInfo()
+    @Select('select user_name, sex, portrait_url as portraitUrl,id from admin_user_info')
+    public List<UserInfo> getAllUserInfo()
 
 }
