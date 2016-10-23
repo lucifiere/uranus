@@ -7,6 +7,7 @@
     <typeAliases>
         <typeAlias type="com.mvc.admin.pojo.User" alias="user"/>
         <typeAlias type="com.mvc.admin.vo.UserVo" alias="userVo"/>
+        <typeAlias type="com.mvc.admin.vo.ArticleVo" alias="articleVo"/>
     </typeAliases>
 
     <!-- 对事务的管理和连接池的配置 -->
@@ -29,6 +30,7 @@
         <mapper class="com.mvc.admin.dao.mapper.StaticsMapper"/>
         <mapper class="com.mvc.admin.dao.mapper.OperateLogMapper"/>
         <mapper class="com.mvc.admin.dao.mapper.WordMapper"/>
+        <mapper class="com.mvc.admin.dao.mapper.ArticleMapper"/>
     </mappers>
 
 </configuration>

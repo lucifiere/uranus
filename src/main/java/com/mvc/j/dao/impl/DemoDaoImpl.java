@@ -21,7 +21,7 @@ public class DemoDaoImpl extends DaoBase implements DemoDao {
 
     public ArrayList getDemos() {
         SqlSession session = factory.openSession();
-        ArrayList demos = session.selectOne("com.mvc.dao.Demo.getDemoList");
+        ArrayList demos = (ArrayList) session.selectList("com.mvc.dao.Demo.getDemoList");
         session.close();
         return demos;
     }

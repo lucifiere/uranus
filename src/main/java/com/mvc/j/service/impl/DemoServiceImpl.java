@@ -26,7 +26,6 @@ public class DemoServiceImpl implements DemoService {
         return demoDAO.getDemo(id);
     }
 
-    @Override
     public void insertDemo(Demo demo) {
         demoDAO.insertDemo(demo);
     }

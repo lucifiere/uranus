@@ -65,7 +65,7 @@
                         <li ><a href="../html/user.html">图库</a></li>
                         <li ><a href="../html/gallery.html">心情</a></li>
                         <li ><a href="../html/calendar.html">评论</a></li>
-                        <li ><a href="../html/faq.html">指南</a></li>
+                        <li ><a href="faq.ftl">指南</a></li>
                         <li ><a href="../html/help.html">帮助</a></li>
                     </ul>
                 <div class="nav-header" data-toggle="collapse" data-target="#accounts-menu"><i class="icon-briefcase"></i>账户<span class="label label-info">+10</span></div>
@@ -165,7 +165,7 @@
               </#list>
               </tbody>
             </table>
-        </div>
+        <#--</div>-->
     </div>
     <div class="block span6">
         <p class="block-heading">待定</p>

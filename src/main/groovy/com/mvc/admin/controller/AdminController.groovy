@@ -1,14 +1,16 @@
 package com.mvc.admin.controller
 
-import com.mvc.admin.pojo.OperateLog
 import com.mvc.admin.pojo.Statics
 import com.mvc.admin.pojo.Word
+import com.mvc.admin.service.ArticleService
 import com.mvc.admin.service.OperateLogService
 import com.mvc.admin.service.StaticsService
 import com.mvc.admin.service.UserService
 import com.mvc.admin.service.WordService
 import com.mvc.admin.util.DateUtil
+import com.mvc.admin.vo.ArticleVo
 import com.mvc.admin.vo.OperateLogVo
+import com.mvc.admin.vo.PageInfo
 import com.mvc.admin.vo.UserVo
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.RequestMapping
@@ -33,10 +35,11 @@ class AdminController {
     WordService wordService
     @Resource
     OperateLogService operateLogService
+    @Resource
+    ArticleService articleService
 
     @RequestMapping(value = '/index', method = RequestMethod.POST)
     public ModelAndView login(String token){
-
         UserVo userInfo = userService.getUserByToken(token)
         Statics statics = staticsService.getStaticsByDate(new Date().format(DateUtil.SYMBOL_SIMPLE_PAT))
         Word word = wordService.getLeaveWord()
@@ -52,4 +55,16 @@ class AdminController {
         mv
     }
 
+    @RequestMapping(value = '/blogs', method = RequestMethod.GET)
+    public ModelAndView getBlogList(PageInfo info){
+        info = new PageInfo()
+        info.setPageBegin(1)
+        info.setPageSize(10)
+        List<ArticleVo> articleList = articleService.getArticleList4Page(info)
+        int count = articleService.getCountOfPage()
+        def mv = new ModelAndView('admin-blogs.ftl')
+        mv.addObject("articleList", articleList)
+        mv.addObject("count", count)
+        mv
+    }
 }

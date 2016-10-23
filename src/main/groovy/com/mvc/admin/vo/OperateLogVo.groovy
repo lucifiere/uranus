@@ -7,8 +7,8 @@ import com.mvc.admin.pojo.OperateLog
  */
 class OperateLogVo extends OperateLog{
 
-    String createTimeStr
-    String userName
+    private String createTimeStr
+    private String userName
 
     String getCreateTimeStr() {
         return createTimeStr

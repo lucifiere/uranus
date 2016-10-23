@@ -13,7 +13,6 @@ import javax.annotation.Resource
 
 @Service
 class UserService {
-
     @Resource(name = 'userDao')
     UserDao userDao
 
@@ -32,5 +31,4 @@ class UserService {
     public List<UserVo> getUser4Admin(){
         userDao.getUser4Admin()
     }
-
 }
