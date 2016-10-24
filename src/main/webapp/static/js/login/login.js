@@ -12,7 +12,7 @@ function check() {
         success: function(data) {
             if(data.code == 200){
                 post("/admin/index", {token: data.token});
-                window.opener=null;
+                window.opener = null;
                 window.open('','_self');
                 window.close();
             }else if(data.code == 403){
@@ -26,8 +26,6 @@ function check() {
         }
     });
 }
-
-
 
 function post(URL, PARAMS) {
     var temp = document.createElement("form");

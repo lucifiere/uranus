@@ -9,11 +9,11 @@ class Article {
     private String title
     private String digest
     private String content
-    private String recover_url
-    private int author_id
-    private int visit_count
+    private String recoverUrl
+    private int authorId
+    private int visitCount
     private int category
-    private Date create_time
+    private Date createTime
 
     int getId() {
         return id
@@ -47,28 +47,28 @@ class Article {
         this.content = content
     }
 
-    String getRecover_url() {
-        return recover_url
+    String getRecoverUrl() {
+        return recoverUrl
     }
 
-    void setRecover_url(String recover_url) {
-        this.recover_url = recover_url
+    void setRecoverUrl(String recoverUrl) {
+        this.recoverUrl = recoverUrl
     }
 
-    int getAuthor_id() {
-        return author_id
+    int getAuthorId() {
+        return authorId
     }
 
-    void setAuthor_id(int author_id) {
-        this.author_id = author_id
+    void setAuthorId(int authorId) {
+        this.authorId = authorId
     }
 
-    int getVisit_count() {
-        return visit_count
+    int getVisitCount() {
+        return visitCount
     }
 
-    void setVisit_count(int visit_count) {
-        this.visit_count = visit_count
+    void setVisitCount(int visitCount) {
+        this.visitCount = visitCount
     }
 
     int getCategory() {
@@ -79,11 +79,11 @@ class Article {
         this.category = category
     }
 
-    Date getCreate_time() {
-        return create_time
+    Date getCreateTime() {
+        return createTime
     }
 
-    void setCreate_time(Date create_time) {
-        this.create_time = create_time
+    void setCreateTime(Date createTime) {
+        this.createTime = createTime
     }
 }

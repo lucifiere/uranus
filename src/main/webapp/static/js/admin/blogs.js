@@ -1,34 +1,22 @@
 /**
- * Created by Tyler.Wang on 2016/10/23.
+ *  Created by Tyler.Wang on 2016/10/23.
  */
 
-function getPageInfo(id) {
-    var info = {};
-    info.pageBegin = id * 10;
-    info.pageEnd = id * 10 + 10;
-    getArticleList(info)
+function getPageInfo(begin) {
+    window.location.href = "/admin/blogs?pageBegin=" + begin + "&pageSize=" + 10;
 }
 
+function toPage(isNext) {
+    var pageSize = 10;
+    var search = window.location.search;
+    var begin = parseInt(search.substring(search.indexOf("n=") + 2, search.indexOf("&pageSize")));
+    var counts = $('#counts').val();
+    if(begin == counts && isNext)
+        return;
+    if(begin == 1 && !isNext)
+        return;
 
-function getArticleList(info) {
-    $.ajax({
-        type: "post",
-        url: "/getArticleList",
-        dataType: 'json',
-        async: false,
-        data:info.serialize(),
-        success: function(data) {
-            if(data.code == 200){
-                window.opener = null;
-                window.open('','_self');
-                window.close();
-            }
-            else{
-                alert("未知错误");
-            }
-        },
-        error : function() {
-            alert("未知错误 - 500");
-        }
-    });
+    var pageBegin = (isNext ? begin + 1 : begin - 1);
+    
+    window.location.href = "/admin/blogs?pageBegin=" + pageBegin + "&pageSize=" + pageSize;
 }

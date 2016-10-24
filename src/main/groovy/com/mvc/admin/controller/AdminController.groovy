@@ -1,5 +1,6 @@
 package com.mvc.admin.controller
 
+import com.alibaba.fastjson.JSON
 import com.mvc.admin.pojo.Statics
 import com.mvc.admin.pojo.Word
 import com.mvc.admin.service.ArticleService
@@ -15,6 +16,7 @@ import com.mvc.admin.vo.UserVo
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
+import org.springframework.web.bind.annotation.ResponseBody
 import org.springframework.web.servlet.ModelAndView
 
 import javax.annotation.Resource
@@ -56,15 +58,18 @@ class AdminController {
     }
 
     @RequestMapping(value = '/blogs', method = RequestMethod.GET)
-    public ModelAndView getBlogList(PageInfo info){
-        info = new PageInfo()
-        info.setPageBegin(1)
-        info.setPageSize(10)
+    @ResponseBody
+    public ModelAndView getBlogList(int pageBegin, int pageSize){
+        PageInfo info = new PageInfo(pageBegin, pageSize)
         List<ArticleVo> articleList = articleService.getArticleList4Page(info)
         int count = articleService.getCountOfPage()
         def mv = new ModelAndView('admin-blogs.ftl')
         mv.addObject("articleList", articleList)
-        mv.addObject("count", count)
+        int[] list = new int[count]
+        for(int i = 1; i <= count; i++)
+            list[i - 1] = i
+        mv.addObject("pageCountList", list)
+        mv.addObject("counts", count)
         mv
     }
 }

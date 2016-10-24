@@ -8,6 +8,14 @@ class PageInfo {
     private int pageBegin
     private int pageSize
 
+    PageInfo(){
+    }
+
+    PageInfo(int pageBegin, int pageSize){
+        this.pageBegin = pageBegin
+        this.pageSize = pageSize
+    }
+
     int getPageBegin() {
         return pageBegin
     }

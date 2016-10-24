@@ -9,10 +9,11 @@ import org.apache.ibatis.annotations.Select
  */
 interface ArticleMapper {
 
-    @Select("""select a.id,a.title,u.user_name as userName,c.name as categoryName from blog_article a
+    @Select("""select a.id,a.title,u.user_name as user,c.name as categoryName from blog_article a
                 left join admin_user user on a.author_id = user.id
                 left join admin_user_info u on user.info = u.id
                 left join blog_article_category c on a.category = c.id
+                ORDER BY a.id
                 limit #{pageBegin},#{pageSize}""")
     public List<ArticleVo> getArticleList4Page(PageInfo info)
 

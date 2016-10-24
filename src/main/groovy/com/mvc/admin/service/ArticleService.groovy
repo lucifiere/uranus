@@ -18,7 +18,7 @@ class ArticleService {
     ArticleDao articleDao
 
     public List<ArticleVo> getArticleList4Page(PageInfo info){
-        info.setPageBegin(info.getPageBegin() * 10)
+        info.setPageBegin((info.getPageBegin() - 1) * 10)
         articleDao.getArticleList4Page(info)
     }
 

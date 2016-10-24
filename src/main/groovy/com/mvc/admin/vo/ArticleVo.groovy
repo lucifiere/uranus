@@ -8,7 +8,7 @@ import com.mvc.admin.pojo.Article
 class ArticleVo extends Article{
 
     private String categoryName
-    private String userName
+    private String user
 
     String getCategoryName() {
         return categoryName
@@ -16,5 +16,13 @@ class ArticleVo extends Article{
 
     void setCategoryName(String categoryName) {
         this.categoryName = categoryName
+    }
+
+    String getUser() {
+        return user
+    }
+
+    void setUser(String user) {
+        this.user = user
     }
 }
