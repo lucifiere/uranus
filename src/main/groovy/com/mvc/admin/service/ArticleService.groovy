@@ -27,4 +27,8 @@ class ArticleService {
         Math.floor(all / 10)
     }
 
+    public ArticleVo getArticleById(int id){
+        articleDao.getArticleById(id)
+    }
+
 }

@@ -20,4 +20,11 @@ interface ArticleMapper {
     @Select("""select count(1) from blog_article""")
     public int getCountOfPage()
 
+    @Select("""select a.id,a.title,u.user_name as user,c.name as categoryName from blog_article a
+                left join admin_user user on a.author_id = user.id
+                left join admin_user_info u on user.info = u.id
+                left join blog_article_category c on a.category = c.id
+                where a.id = #{id} """)
+    public ArticleVo getArticleById(int id)
+
 }

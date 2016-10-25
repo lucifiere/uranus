@@ -72,4 +72,12 @@ class AdminController {
         mv.addObject("counts", count)
         mv
     }
+
+    @RequestMapping(value = '/blog', method = RequestMethod.GET)
+    public ModelAndView getBlogList(int id){
+        ArticleVo article = articleService.getArticleById(id)
+        def mv = new ModelAndView('admin-blog.ftl')
+        mv.addObject('blog', article)
+        mv
+    }
 }

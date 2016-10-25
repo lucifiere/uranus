@@ -35,4 +35,15 @@ class ArticleDao extends DaoBase {
         }
     }
 
+    public ArticleVo getArticleById(int id){
+        SqlSession session = factory.openSession()
+        try {
+            ArticleMapper mapper = session.getMapper(ArticleMapper.class)
+            ArticleVo vo = mapper.getArticleById(id)
+            return vo
+        } finally {
+            session.close()
+        }
+    }
+
 }
