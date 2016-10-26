@@ -6,6 +6,9 @@
     <title>新建博文</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <link href="../static/css/admin/templatemo_style.css" rel="stylesheet" type="text/css" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <script type="text/javascript" charset="utf-8" src="../static/ue/ueditor.config.js"></script>
