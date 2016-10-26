@@ -20,3 +20,8 @@ function toPage(isNext) {
     
     window.location.href = "/admin/blogs?pageBegin=" + pageBegin + "&pageSize=" + pageSize;
 }
+
+function setContent() {
+    var content = $('#content').val();
+    UE.getEditor('editor').setContent(content);
+}

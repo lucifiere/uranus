@@ -1,12 +1,12 @@
 package com.mvc.admin.service
 
 import com.mvc.admin.dao.OperateLogDao
+import com.mvc.admin.pojo.OperateLog
 import com.mvc.admin.util.DateUtil
 import com.mvc.admin.vo.OperateLogVo
 import org.springframework.stereotype.Service
 
 import javax.annotation.Resource
-import java.text.SimpleDateFormat
 
 /**
  *  Created by Created by XD.Wang on 2016/10/21.
@@ -31,5 +31,10 @@ class OperateLogService {
         }
         voList
     }
+
+    public void addOperateLog(OperateLog log){
+        operateLogDao.addOperateLog(log)
+    }
+
 
 }

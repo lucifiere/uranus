@@ -23,4 +23,14 @@ class OperateLogDao extends DaoBase{
         }
     }
 
+    public void addOperateLog(OperateLog log){
+        SqlSession session = factory.openSession()
+        try {
+            OperateLogMapper operateLogMapper = session.getMapper(OperateLogMapper.class)
+            operateLogMapper.add(log)
+        } finally {
+            session.close()
+        }
+    }
+
 }

@@ -1,6 +1,7 @@
 package com.mvc.admin.service
 
 import com.mvc.admin.dao.ArticleDao
+import com.mvc.admin.pojo.Article
 import com.mvc.admin.vo.ArticleVo
 import com.mvc.admin.vo.PageInfo
 import org.springframework.stereotype.Service
@@ -29,6 +30,14 @@ class ArticleService {
 
     public ArticleVo getArticleById(int id){
         articleDao.getArticleById(id)
+    }
+
+    public void updateArticle(Article article){
+        articleDao.updateArticle(article)
+    }
+
+    public void addArticle(Article article){
+        articleDao.addArticle(article)
     }
 
 }

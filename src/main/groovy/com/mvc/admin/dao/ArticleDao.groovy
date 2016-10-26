@@ -1,6 +1,7 @@
 package com.mvc.admin.dao
 
 import com.mvc.admin.dao.mapper.ArticleMapper
+import com.mvc.admin.pojo.Article
 import com.mvc.admin.vo.ArticleVo
 import com.mvc.admin.vo.PageInfo
 import org.apache.ibatis.session.SqlSession
@@ -41,6 +42,26 @@ class ArticleDao extends DaoBase {
             ArticleMapper mapper = session.getMapper(ArticleMapper.class)
             ArticleVo vo = mapper.getArticleById(id)
             return vo
+        } finally {
+            session.close()
+        }
+    }
+
+    public void updateArticle(Article article){
+        SqlSession session = factory.openSession()
+        try {
+            ArticleMapper mapper = session.getMapper(ArticleMapper.class)
+            mapper.update(article)
+        } finally {
+            session.close()
+        }
+    }
+
+    public void addArticle(Article article){
+        SqlSession session = factory.openSession()
+        try {
+            ArticleMapper mapper = session.getMapper(ArticleMapper.class)
+            mapper.add(article)
         } finally {
             session.close()
         }

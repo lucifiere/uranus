@@ -1,6 +1,7 @@
 package com.mvc.admin.controller
 
 import com.alibaba.fastjson.JSON
+import com.mvc.admin.pojo.Article
 import com.mvc.admin.pojo.Statics
 import com.mvc.admin.pojo.Word
 import com.mvc.admin.service.ArticleService
@@ -75,9 +76,23 @@ class AdminController {
 
     @RequestMapping(value = '/blog', method = RequestMethod.GET)
     public ModelAndView getBlogList(int id){
-        ArticleVo article = articleService.getArticleById(id)
         def mv = new ModelAndView('admin-blog.ftl')
+        if(id == null){
+            ArticleVo article = new ArticleVo()
+            mv.addObject('blog', article)
+            return mv
+        }
+
+        ArticleVo article = articleService.getArticleById(id)
         mv.addObject('blog', article)
         mv
+    }
+
+    @RequestMapping(value = '/blog/edit', method = RequestMethod.POST)
+    @ResponseBody
+    public String addBlog(Article article){
+        article.getId() ? articleService.updateArticle(article) :
+                articleService.addArticle(article)
+        JSON.toJSONString(['status':200])
     }
 }
