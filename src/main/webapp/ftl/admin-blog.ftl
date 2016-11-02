@@ -62,7 +62,7 @@
                         </select>
                         <br/>
                     </label>
-                    <input type="submit" id="submit">
+                    <input type="submit" id="submit" >
                     <br/>
                     <input type="hidden" id="author" name="author" value="1">
                     <input type="hidden" id="content" name="content" value="<#if blog.content??>${blog.content}<#else></#if>">
@@ -89,7 +89,7 @@
         </div>
     </div>
     <script type="text/javascript">
-        UE.getEditor('editor');
+        UE.getEditor('editor')
     </script>
 </body>
 </html>

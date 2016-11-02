@@ -95,4 +95,11 @@ class AdminController {
                 articleService.addArticle(article)
         JSON.toJSONString(['status':200])
     }
+
+    @RequestMapping(value = '/ue')
+    public String ue(String action){
+        if(action == 'config'){
+
+        }
+    }
 }

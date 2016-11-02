@@ -22,6 +22,7 @@ function toPage(isNext) {
 }
 
 function setContent() {
+    var ue = UE.getEditor('editor');
     var content = $('#content').val();
-    UE.getEditor('editor').setContent(content);
+    ue.setContent(content);
 }
