@@ -31,7 +31,7 @@ import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.CertificateException;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 /**
  *  Created by Created by XD.Wang on 2016/9/5.
@@ -88,7 +88,7 @@ public class Http {
      * @param url POST请求的目标URL
      * @return 是否发送成功
      */
-    public static boolean doPost(HashMap<String, String> params, String url){
+    public static boolean doPost(LinkedHashMap<String, String> params, String url){
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost(url);
         try{
